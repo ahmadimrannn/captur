@@ -21,7 +21,6 @@ Drop in a file. Get back everything that matters.
 - FastAPI — REST API layer
 - LangChain — map-reduce chain pipeline
 - Groq (LLM) — summarization and extraction
-- AssemblyAI — audio transcription
 - PyPDF — PDF loading
 **Frontend**
 - React JS
@@ -84,7 +83,6 @@ Both the summarizer and extractor use LangChain's **map-reduce** chain — the t
 - Python 3.11+
 - Node.js 18+
 - Groq API key
-- AssemblyAI API key (only needed for audio files)
 ### Backend setup
  
 ```bash
@@ -133,7 +131,6 @@ Create a `.env` file inside the `backend/` folder:
  
 ```env
 GROQ_API_KEY=your_groq_api_key
-ASSEMBLYAI_API_KEY=your_assemblyai_api_key
 LLM_MODEL_NAME=llama3-8b-8192
 CHUNK_SIZE=3000
 CHUNK_OVERLAP=200
@@ -149,7 +146,7 @@ Upload a meeting transcript or audio file for processing.
  
 **Request**
 - Content-Type: `multipart/form-data`
-- Body: `file` — supported formats: `.txt`, `.pdf`, `.mp3`, `.m4a`, `.wav`, `.flac`
+- Body: `file` — supported formats: `.txt`, `.pdf`
 **Response**
 ```json
 {
@@ -166,15 +163,12 @@ Upload a meeting transcript or audio file for processing.
 |--------|------|
 | `.txt` | Plain text transcript |
 | `.pdf` | PDF transcript |
-| `.mp3` | Audio recording |
-| `.m4a` | Audio recording |
-| `.wav` | Audio recording |
-| `.flac` | Audio recording |
  
 ---
  
 ## Roadmap
  
+- [ ] Audio file support — transcribe and process meeting recordings
 - [ ] Report builder — export results as PDF or markdown
 - [ ] Authentication — multi-user support
 - [ ] Meeting history — save and retrieve past meetings
@@ -185,4 +179,3 @@ Upload a meeting transcript or audio file for processing.
 ## License
  
 MIT License — see `LICENSE` for details.
- 
