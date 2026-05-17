@@ -1,0 +1,11 @@
+langchain-classic
+langchain-core
+langchain-community
+langchain-groq
+gradio
+streamlit
+fastapi
+langserve
+python-dotenv
+uvicorn
+
