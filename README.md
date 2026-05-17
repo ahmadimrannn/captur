@@ -1,12 +1,12 @@
 # Captur
  
-> Transform meeting transcripts and audio files into structured summaries, action items, decisions, and deadlines — powered by LangChain and FastAPI.
+> Transform meeting transcripts into structured summaries, action items, decisions, and deadlines — powered by LangChain and FastAPI.
  
 ---
  
 ## What it does
  
-Captur takes raw meeting transcripts or audio files and runs them through an AI pipeline that produces two things:
+Captur takes raw meeting transcripts and runs them through an AI pipeline that produces two things:
  
 - A concise narrative summary of the entire meeting
 - Structured extraction of action items, decisions, task owners, and deadlines
