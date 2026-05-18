@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/landing/Hero";
 import { Features } from "@/components/landing/Features";
 import { HowItWorks } from "@/components/landing/HowItWorks";
-
+import { Pricing } from "@/components/landing/Pricing";
 import { CTA, Footer } from "@/components/landing/CTA";
 
 export const Route = createFileRoute("/")({
@@ -21,11 +21,13 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="min-h-screen w-full bg-[#ededed] p-3 sm:p-4" style={{ fontFamily: "Inter, system-ui, sans-serif" }}>
+    <main
+      className="min-h-screen w-full bg-[#ededed] p-3 sm:p-4"
+      style={{ fontFamily: "Inter, system-ui, sans-serif" }}
+    >
       <Hero />
       <Features />
       <HowItWorks />
-      
       <CTA />
       <Footer />
     </main>

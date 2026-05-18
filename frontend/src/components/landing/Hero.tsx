@@ -5,7 +5,7 @@ import { DashboardPreview } from "./DashboardPreview";
 
 export function Hero() {
   return (
-    <div className="relative w-full h-[calc(100vh-24px)] sm:h-[calc(100vh-32px)] overflow-hidden bg-[#d9d9d9] rounded-2xl sm:rounded-3xl">
+    <div id="home" className="relative w-full h-[calc(100vh-24px)] sm:h-[calc(100vh-32px)] overflow-hidden bg-[#d9d9d9] rounded-2xl sm:rounded-3xl">
       <video
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         autoPlay

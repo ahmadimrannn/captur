@@ -1,92 +1,92 @@
-import { ChevronDown, TrendingDown, TrendingUp, X } from "lucide-react";
-import { Gauge } from "./Gauge";
+import { CheckCircle2, AlertCircle, Users, Clock } from "lucide-react";
 
-function Card1() {
+function SummaryCard() {
   return (
-    <div className="bg-white rounded-2xl p-5 flex flex-col">
-      <div className="flex items-center justify-between text-[13px]">
-        <span className="text-[#ef4d23] font-medium">Clicks</span>
-        <span className="text-neutral-500">This Month</span>
+    <div className="bg-white rounded-2xl p-6 flex flex-col">
+      <div className="flex items-center justify-between mb-4">
+        <span className="text-[#ef4d23] font-semibold text-[14px]">Meeting Summary</span>
+        <span className="text-neutral-500 text-[12px]">Q3 Planning</span>
       </div>
-      <div className="flex items-center gap-2 mt-2">
-        <span style={{ fontSize: 28, fontWeight: 600 }}>6,896</span>
-        <span className="bg-red-50 text-red-600 rounded-full px-2 py-0.5 inline-flex items-center gap-1 text-[11px]">
-          <TrendingDown className="w-3 h-3" />
-          -3,382 (33%)
+      <p className="text-[13px] text-neutral-700 leading-relaxed">
+        The team discussed Q3 roadmap priorities, with focus on scaling API performance and
+        improving user onboarding. Key decisions made around resource allocation and timeline
+        adjustments for the next sprint cycle.
+      </p>
+      <div className="flex gap-3 mt-5">
+        <div className="flex items-center gap-1.5">
+          <Users className="w-4 h-4 text-[#ef4d23]" />
+          <span className="text-[12px] text-neutral-600">8 speakers</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <Clock className="w-4 h-4 text-[#ef4d23]" />
+          <span className="text-[12px] text-neutral-600">47 minutes</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ActionItemsCard() {
+  const items = [
+    { owner: "Sarah Chen", task: "Finalize API performance metrics", deadline: "May 22" },
+    { owner: "Marcus Webb", task: "Setup user analytics dashboard", deadline: "May 25" },
+    { owner: "Team", task: "Review security compliance checklist", deadline: "May 24" },
+  ];
+
+  return (
+    <div className="bg-white rounded-2xl p-6 flex flex-col">
+      <div className="flex items-center justify-between mb-4">
+        <span className="text-[#ef4d23] font-semibold text-[14px]">Action Items</span>
+        <span className="bg-[#ef4d23] text-white text-[11px] rounded-full px-2.5 py-1">
+          {items.length}
         </span>
       </div>
-      <span className="text-[11px] text-neutral-500 mt-1">Compared to yesterday</span>
-      <div className="text-center text-[12px] text-neutral-700 mt-4">Month Target achieved</div>
-      <Gauge value={92} color="#ef4d23" showLabels min="389K" max="425K" />
-      <div className="bg-neutral-100 rounded-full p-1 flex mt-3 text-[12px]">
-        <span className="flex-1 text-center bg-white rounded-full py-1 shadow-sm">Impressions</span>
-        <span className="flex-1 text-center py-1 text-neutral-500">Clicks</span>
+      <div className="space-y-3">
+        {items.map((item, i) => (
+          <div
+            key={i}
+            className="flex gap-3 pb-3 border-b border-neutral-100 last:border-b-0 last:pb-0"
+          >
+            <CheckCircle2 className="w-4 h-4 text-[#ef4d23] shrink-0 mt-0.5" />
+            <div className="flex-1">
+              <p className="text-[13px] font-medium text-neutral-900">{item.task}</p>
+              <div className="flex justify-between mt-1">
+                <span className="text-[11px] text-neutral-600">Owner: {item.owner}</span>
+                <span className="text-[11px] text-neutral-500">Due: {item.deadline}</span>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
 }
 
-function FormRow({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex flex-col gap-1">
-      <label className="text-[12px] text-neutral-700">{label}</label>
-      <button className="border border-neutral-200 rounded-lg px-3 py-2 text-[13px] flex items-center justify-between">
-        <span>{value}</span>
-        <ChevronDown className="w-4 h-4 text-neutral-500" />
-      </button>
-    </div>
-  );
-}
+function DecisionsCard() {
+  const decisions = [
+    "Move API v2 launch to June 1st",
+    "Allocate 40% of dev resources to performance optimization",
+    "Implement mandatory security audit before release",
+  ];
 
-function InputRow({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex flex-col gap-1">
-      <label className="text-[12px] text-neutral-700">{label}</label>
-      <div className="border border-neutral-200 rounded-lg px-3 py-2 text-[13px] flex items-center gap-1">
-        <span className="text-neutral-400">#</span>
-        <span>{value}</span>
-      </div>
-    </div>
-  );
-}
-
-function Card2() {
-  return (
-    <div className="bg-white rounded-2xl p-5 flex flex-col gap-3">
-      <FormRow label="Show figures for" value="This month" />
-      <FormRow label="Compare period by" value="Month-to-date (MTD)" />
-      <InputRow label="Ste targets (This month)" value="10" />
-      <InputRow label="Ste targets (This year)" value="100" />
-      <div className="flex items-center gap-3 mt-1">
-        <button className="bg-[#ef4d23] text-white rounded-lg px-5 py-2 text-[13px]">Save</button>
-        <button className="underline text-[13px] text-neutral-700">Cancel</button>
-        <X className="w-4 h-4 ml-auto text-neutral-500" />
-      </div>
-    </div>
-  );
-}
-
-function Card3() {
-  return (
-    <div className="bg-white rounded-2xl p-5 flex flex-col">
-      <div className="flex items-center justify-between text-[13px]">
-        <span className="text-[#ef4d23] font-medium">Video Starts</span>
-        <span className="text-neutral-500">today</span>
-      </div>
-      <div className="flex items-center gap-2 mt-2">
-        <span style={{ fontSize: 28, fontWeight: 600 }}>0</span>
-        <span className="bg-neutral-100 text-neutral-700 rounded-full px-2 py-0.5 inline-flex items-center gap-1 text-[11px]">
-          <TrendingUp className="w-3 h-3" />
-          0
+    <div className="bg-white rounded-2xl p-6 flex flex-col">
+      <div className="flex items-center justify-between mb-4">
+        <span className="text-[#ef4d23] font-semibold text-[14px]">Key Decisions</span>
+        <span className="bg-blue-50 text-blue-600 text-[11px] rounded-full px-2.5 py-1">
+          {decisions.length}
         </span>
       </div>
-      <span className="text-[11px] text-neutral-500 mt-1">Compared to yesterday</span>
-      <div className="mt-4">
-        <Gauge value={68} color="#9ca3af" />
-      </div>
-      <div className="bg-neutral-100 rounded-full p-1 flex mt-3 text-[12px]">
-        <span className="flex-1 text-center bg-white rounded-full py-1 shadow-sm">Video Clicks</span>
-        <span className="flex-1 text-center py-1 text-neutral-500">Video Starts</span>
+      <div className="space-y-3">
+        {decisions.map((decision, i) => (
+          <div
+            key={i}
+            className="flex gap-3 pb-3 border-b border-neutral-100 last:border-b-0 last:pb-0"
+          >
+            <AlertCircle className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
+            <p className="text-[13px] text-neutral-700">{decision}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -95,11 +95,17 @@ function Card3() {
 export function DashboardPreview() {
   return (
     <div className="px-3 sm:px-4 w-full">
-      <div className="bg-[#f5f2ee] rounded-3xl p-4 sm:p-6 w-full max-w-[880px] mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-          <Card1 />
-          <Card2 />
-          <Card3 />
+      <div className="bg-[#f5f2ee] rounded-3xl p-4 sm:p-6 w-full max-w-250 mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4">
+          <div className="lg:col-span-1">
+            <SummaryCard />
+          </div>
+          <div className="lg:col-span-1">
+            <ActionItemsCard />
+          </div>
+          <div className="lg:col-span-1">
+            <DecisionsCard />
+          </div>
         </div>
       </div>
     </div>

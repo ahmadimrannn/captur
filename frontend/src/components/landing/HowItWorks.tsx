@@ -1,12 +1,24 @@
 const steps = [
-  { n: "01", title: "Drop your transcript", desc: "Upload any meeting transcript — Zoom, Meet, Teams, Otter, you name it." },
-  { n: "02", title: "Captur reads it", desc: "Our AI parses speakers, topics, sentiment and intent in seconds." },
-  { n: "03", title: "Get clear insights", desc: "Receive a summary, action items, decisions and follow-ups instantly." },
+  {
+    n: "01",
+    title: "Drop your transcript",
+    desc: "Upload any meeting transcript — Zoom, Meet, Teams, Otter, you name it.",
+  },
+  {
+    n: "02",
+    title: "Captur reads it",
+    desc: "Our AI parses speakers, topics, sentiment and intent in seconds.",
+  },
+  {
+    n: "03",
+    title: "Get clear insights",
+    desc: "Receive a summary, action items, decisions, task owners, and deadlines instantly.",
+  },
 ];
 
 export function HowItWorks() {
   return (
-    <section className="px-3 sm:px-4 mt-4">
+    <section id="how-it-works" className="px-3 sm:px-4 mt-4">
       <div className="bg-[#0b0f1a] text-white rounded-2xl sm:rounded-3xl p-8 sm:p-14">
         <div className="max-w-2xl">
           <span className="inline-flex items-center gap-2 bg-white/10 rounded-full px-3 py-1 text-[12px]">
@@ -14,10 +26,21 @@ export function HowItWorks() {
           </span>
           <h2
             className="mt-4"
-            style={{ fontSize: "clamp(28px, 5vw, 48px)", lineHeight: 1.1, fontWeight: 500, letterSpacing: "-0.02em" }}
+            style={{
+              fontSize: "clamp(28px, 5vw, 48px)",
+              lineHeight: 1.1,
+              fontWeight: 500,
+              letterSpacing: "-0.02em",
+            }}
           >
             From messy transcript to{" "}
-            <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", fontWeight: 400 }}>
+            <span
+              style={{
+                fontFamily: "'Instrument Serif', serif",
+                fontStyle: "italic",
+                fontWeight: 400,
+              }}
+            >
               actionable
             </span>{" "}
             insight

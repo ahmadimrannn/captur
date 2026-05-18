@@ -1,17 +1,41 @@
 import { Sparkles, FileText, ListChecks, Users, Clock, ShieldCheck } from "lucide-react";
 
 const features = [
-  { icon: Sparkles, title: "AI-powered summaries", desc: "Distill hours of conversation into a crisp recap in seconds." },
-  { icon: ListChecks, title: "Action item extraction", desc: "Automatically surface decisions, owners, and deadlines." },
-  { icon: Users, title: "Speaker insights", desc: "See who talked, what mattered, and what to follow up on." },
-  { icon: FileText, title: "Any transcript format", desc: "TXT, VTT, SRT, DOCX, PDF — drop it in and we'll parse it." },
-  { icon: Clock, title: "Save 5+ hours / week", desc: "Skip rewatching recordings. Get the gist instantly." },
-  { icon: ShieldCheck, title: "Private by default", desc: "Your transcripts stay yours. Encrypted end-to-end." },
+  {
+    icon: Sparkles,
+    title: "AI-powered summaries",
+    desc: "Distill hours of conversation into a crisp recap in seconds.",
+  },
+  {
+    icon: ListChecks,
+    title: "Action item extraction",
+    desc: "Automatically surface action items, decisions, owners, and deadlines.",
+  },
+  {
+    icon: Users,
+    title: "Speaker insights",
+    desc: "See who talked, what mattered, and what to follow up on.",
+  },
+  {
+    icon: FileText,
+    title: "Any transcript format",
+    desc: "TXT, PDF — drop it in and we'll parse it.",
+  },
+  {
+    icon: Clock,
+    title: "Save 5+ hours / week",
+    desc: "Skip rewatching recordings. Get the gist instantly.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Private by default",
+    desc: "Your transcripts stay yours. Encrypted end-to-end.",
+  },
 ];
 
 export function Features() {
   return (
-    <section className="px-3 sm:px-4 mt-4">
+    <section id="features" className="px-3 sm:px-4 mt-4">
       <div className="bg-white rounded-2xl sm:rounded-3xl p-8 sm:p-14 border border-neutral-200">
         <div className="text-center max-w-2xl mx-auto">
           <span className="inline-flex items-center gap-2 bg-neutral-100 rounded-full px-3 py-1 text-[12px] text-neutral-700">
@@ -19,10 +43,21 @@ export function Features() {
           </span>
           <h2
             className="mt-4 text-neutral-900"
-            style={{ fontSize: "clamp(28px, 5vw, 48px)", lineHeight: 1.1, fontWeight: 500, letterSpacing: "-0.02em" }}
+            style={{
+              fontSize: "clamp(28px, 5vw, 48px)",
+              lineHeight: 1.1,
+              fontWeight: 500,
+              letterSpacing: "-0.02em",
+            }}
           >
             Everything you need to{" "}
-            <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", fontWeight: 400 }}>
+            <span
+              style={{
+                fontFamily: "'Instrument Serif', serif",
+                fontStyle: "italic",
+                fontWeight: 400,
+              }}
+            >
               decode
             </span>{" "}
             your meetings

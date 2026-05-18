@@ -14,7 +14,12 @@ const tiers = [
     name: "Pro",
     price: "$19",
     desc: "For busy operators and teams.",
-    features: ["Unlimited transcripts", "Speaker analytics", "Custom templates", "Priority support"],
+    features: [
+      "Unlimited transcripts",
+      "Speaker analytics",
+      "Custom templates",
+      "Priority support",
+    ],
     cta: "Try for Free",
     highlight: true,
   },
@@ -30,7 +35,7 @@ const tiers = [
 
 export function Pricing() {
   return (
-    <section className="px-3 sm:px-4 mt-4">
+    <section id="pricing" className="px-3 sm:px-4 mt-4">
       <div className="bg-white rounded-2xl sm:rounded-3xl p-8 sm:p-14 border border-neutral-200">
         <div className="text-center max-w-xl mx-auto">
           <span className="inline-flex items-center gap-2 bg-neutral-100 rounded-full px-3 py-1 text-[12px] text-neutral-700">
@@ -38,10 +43,21 @@ export function Pricing() {
           </span>
           <h2
             className="mt-4 text-neutral-900"
-            style={{ fontSize: "clamp(28px, 5vw, 48px)", lineHeight: 1.1, fontWeight: 500, letterSpacing: "-0.02em" }}
+            style={{
+              fontSize: "clamp(28px, 5vw, 48px)",
+              lineHeight: 1.1,
+              fontWeight: 500,
+              letterSpacing: "-0.02em",
+            }}
           >
             Simple,{" "}
-            <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", fontWeight: 400 }}>
+            <span
+              style={{
+                fontFamily: "'Instrument Serif', serif",
+                fontStyle: "italic",
+                fontWeight: 400,
+              }}
+            >
               transparent
             </span>{" "}
             pricing
@@ -56,18 +72,34 @@ export function Pricing() {
               <div className="flex items-center justify-between">
                 <h3 className="text-[16px] font-medium">{t.name}</h3>
                 {t.highlight && (
-                  <span className="text-[11px] bg-[#ef4d23] text-white rounded-full px-2 py-0.5">Popular</span>
+                  <span className="text-[11px] bg-[#ef4d23] text-white rounded-full px-2 py-0.5">
+                    Popular
+                  </span>
                 )}
               </div>
               <div className="mt-4 flex items-baseline gap-1">
-                <span style={{ fontSize: 36, fontWeight: 600, letterSpacing: "-0.02em" }}>{t.price}</span>
-                <span className={t.highlight ? "text-white/60 text-[13px]" : "text-neutral-500 text-[13px]"}>/mo</span>
+                <span style={{ fontSize: 36, fontWeight: 600, letterSpacing: "-0.02em" }}>
+                  {t.price}
+                </span>
+                <span
+                  className={
+                    t.highlight ? "text-white/60 text-[13px]" : "text-neutral-500 text-[13px]"
+                  }
+                >
+                  /mo
+                </span>
               </div>
-              <p className={`mt-1 text-[13px] ${t.highlight ? "text-white/70" : "text-neutral-600"}`}>{t.desc}</p>
+              <p
+                className={`mt-1 text-[13px] ${t.highlight ? "text-white/70" : "text-neutral-600"}`}
+              >
+                {t.desc}
+              </p>
               <ul className="mt-5 space-y-2">
                 {t.features.map((f) => (
                   <li key={f} className="flex items-center gap-2 text-[13px]">
-                    <Check className={`w-4 h-4 ${t.highlight ? "text-[#ef4d23]" : "text-[#ef4d23]"}`} />
+                    <Check
+                      className={`w-4 h-4 ${t.highlight ? "text-[#ef4d23]" : "text-[#ef4d23]"}`}
+                    />
                     {f}
                   </li>
                 ))}
