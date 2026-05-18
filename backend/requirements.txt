@@ -8,4 +8,5 @@ fastapi
 langserve
 python-dotenv
 uvicorn
+reportlab
 

@@ -1,0 +1,57 @@
+# Captur - AI Meeting Transcript Insight Extractor
+# Root requirements file for the entire project
+# 
+# BACKEND (Python) DEPENDENCIES
+# ===========================
+# These are all Python packages required for the FastAPI backend
+
+# Core Framework & API
+fastapi
+uvicorn[standard]
+
+# LangChain & LLM Integration
+langchain
+langchain-core
+langchain-community
+langchain-groq
+langserve
+
+# Environment & Configuration
+python-dotenv
+
+# PDF Processing
+reportlab
+
+# Optional: Data Science & UI Tools
+gradio
+streamlit
+
+# FRONTEND DEPENDENCIES
+# ====================
+# Frontend dependencies are managed via npm/yarn in the 'frontend' folder
+# To install frontend dependencies, run:
+#   cd frontend && npm install
+#
+# Frontend package.json includes:
+#   - React 19.2.0
+#   - TanStack Router & Query
+#   - Radix UI Components
+#   - Tailwind CSS
+#   - TypeScript
+#   - Vite (build tool)
+#   - ESLint & Prettier (dev tools)
+#   - And 50+ other packages (see frontend/package.json)
+
+# SETUP INSTRUCTIONS
+# ==================
+# 1. Backend Setup:
+#    - Create virtual environment: python -m venv venv
+#    - Activate: source venv/bin/activate (or venv\Scripts\activate on Windows)
+#    - Install packages: pip install -r requirements.txt
+#    - Create .env file with GROQ_API_KEY
+#    - Run: uvicorn backend.api:app --reload
+#
+# 2. Frontend Setup:
+#    - cd frontend
+#    - npm install
+#    - npm run dev
