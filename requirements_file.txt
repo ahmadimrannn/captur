@@ -28,30 +28,29 @@ streamlit
 
 # FRONTEND DEPENDENCIES
 # ====================
-# Frontend dependencies are managed via npm/yarn in the 'frontend' folder
+# Frontend dependencies are managed via npm/yarn in the 'frontend_new' folder
 # To install frontend dependencies, run:
-#   cd frontend && npm install
+#   cd frontend_new && npm install
 #
 # Frontend package.json includes:
 #   - React 19.2.0
-#   - TanStack Router & Query
+#   - TanStack Query
 #   - Radix UI Components
 #   - Tailwind CSS
 #   - TypeScript
 #   - Vite (build tool)
-#   - ESLint & Prettier (dev tools)
-#   - And 50+ other packages (see frontend/package.json)
+#   - And 50+ other packages (see frontend_new/package.json)
 
 # SETUP INSTRUCTIONS
 # ==================
 # 1. Backend Setup:
 #    - Create virtual environment: python -m venv venv
 #    - Activate: source venv/bin/activate (or venv\Scripts\activate on Windows)
-#    - Install packages: pip install -r requirements.txt
+#    - Install packages: pip install -r requirements_file.txt
 #    - Create .env file with GROQ_API_KEY
 #    - Run: uvicorn backend.api:app --reload
 #
 # 2. Frontend Setup:
-#    - cd frontend
+#    - cd frontend_new
 #    - npm install
 #    - npm run dev
