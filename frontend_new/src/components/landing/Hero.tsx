@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
-import { Navbar } from "./Navbar";
 import { DashboardPreview } from "./DashboardPreview";
+import Navbar from "./Navbar";
 
 export function Hero() {
   return (
