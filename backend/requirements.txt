@@ -1,4 +1,5 @@
 langchain-classic
+langchain
 langchain-core
 langchain-community
 langchain-groq
@@ -9,4 +10,5 @@ langserve
 python-dotenv
 uvicorn
 reportlab
+transformers
 

@@ -15,9 +15,11 @@ langchain-core
 langchain-community
 langchain-groq
 langserve
+langchain-classic
 
 # Environment & Configuration
 python-dotenv
+transformers
 
 # PDF Processing
 reportlab
