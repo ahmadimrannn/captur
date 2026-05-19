@@ -11,6 +11,7 @@ Captur takes raw meeting transcripts and runs them through an AI pipeline that p
 - A concise narrative summary of the entire meeting
 - Structured extraction of action items, decisions, task owners, and deadlines
 Drop in a file. Get back everything that matters.
+- You can then download the final report as a structured PDF.
  
 ---
  
@@ -169,7 +170,6 @@ Upload a meeting transcript or audio file for processing.
 ## Roadmap
  
 - [ ] Audio file support — transcribe and process meeting recordings
-- [ ] Report builder — export results as PDF or markdown
 - [ ] Authentication — multi-user support
 - [ ] Meeting history — save and retrieve past meetings
 - [ ] Slack and Notion integration
