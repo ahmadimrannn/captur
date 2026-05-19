@@ -78,7 +78,7 @@ export default function UploadPage() {
     try {
       const fd = new FormData();
       fd.append("file", file);
-      const res = await fetch("http://localhost:8000/process", { method: "POST", body: fd });
+      const res = await fetch("https://captur-production.up.railway.app/process", { method: "POST", body: fd });
       if (!res.ok) throw new Error(`Server returned ${res.status}`);
       const ct = res.headers.get("content-type") ?? "";
       const data: Insights = ct.includes("application/json") ? await res.json() : await res.text();
@@ -86,7 +86,7 @@ export default function UploadPage() {
       // Pre-fetch the PDF and cache it
       if (typeof data === "object" && data !== null && "pdf_filename" in data) {
         try {
-          const pdfRes = await fetch(`http://localhost:8000/download/${data.pdf_filename}`);
+          const pdfRes = await fetch(`https://captur-production.up.railway.app/download/${data.pdf_filename}`);
           if (pdfRes.ok) {
             const blob = await pdfRes.blob();
             setPdfBlob(blob);
