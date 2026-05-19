@@ -102,7 +102,7 @@ export default function UploadPage() {
       setStatus("error");
       setMessage(
         err instanceof Error
-          ? `Couldn't reach the insights service: ${err.message}. Make sure your backend is running on http://localhost:8000.`
+          ? `Couldn't reach the insights service: ${err.message}. Make sure your backend is running.`
           : "Something went wrong. Please try again.",
       );
     }
