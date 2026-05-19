@@ -1,6 +1,4 @@
-/* eslint-disable prettier/prettier */
 import { useRef, useState } from "react";
-import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   UploadCloud,
   FileText,
@@ -12,21 +10,22 @@ import {
   Sparkles,
   Download,
 } from "lucide-react";
-import { Navbar } from "@/components/landing/Navbar";
-import { Button } from "@/components/ui/button";
+import Navbar from "../components/landing/Navbar";
+import { Link } from "react-router-dom";
+import InsightsView from "../components/landing/InsightsView";
 
-export const Route = createFileRoute("/upload")({
-  component: UploadPage,
-  head: () => ({
-    meta: [
-      { title: "Upload your transcript — Captur" },
-      {
-        name: "description",
-        content: "Drag or drop your messy meeting transcript and get important insights.",
-      },
-    ],
-  }),
-});
+// export const Route = createFileRoute("/upload")({
+//   component: UploadPage,
+//   head: () => ({
+//     meta: [
+//       { title: "Upload your transcript — Captur" },
+//       {
+//         name: "description",
+//         content: "Drag or drop your messy meeting transcript and get important insights.",
+//       },
+//     ],
+//   }),
+// });
 
 const ACCEPTED_EXT = [".pdf", ".txt"];
 const ACCEPTED_MIME = ["application/pdf", "text/plain"];
@@ -39,7 +38,7 @@ function isAccepted(f: File) {
 type InsightsObject = { pdf_filename?: string; [key: string]: unknown };
 type Insights = InsightsObject | string | null;
 
-function UploadPage() {
+export default function UploadPage() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [file, setFile] = useState<File | null>(null);
   const [dragOver, setDragOver] = useState(false);
@@ -365,39 +364,3 @@ function UploadPage() {
   );
 }
 
-function InsightsView({ data }: { data: Insights }) {
-  if (typeof data === "string") {
-    return (
-      <p className="text-[14px] text-neutral-800 whitespace-pre-wrap leading-relaxed">{data}</p>
-    );
-  }
-  if (data && typeof data === "object") {
-    return (
-      <div className="space-y-4">
-        {Object.entries(data).map(([key, value]) => (
-          <div key={key}>
-            <h3 className="text-[12px] uppercase tracking-wide text-neutral-500 font-medium">
-              {key}
-            </h3>
-            <div className="mt-1 text-[14px] text-neutral-800">
-              {Array.isArray(value) ? (
-                <ul className="list-disc pl-5 space-y-1">
-                  {value.map((v, i) => (
-                    <li key={i}>{typeof v === "string" ? v : JSON.stringify(v)}</li>
-                  ))}
-                </ul>
-              ) : typeof value === "object" && value !== null ? (
-                <pre className="text-[12px] bg-white rounded-lg p-3 overflow-auto border border-neutral-200">
-                  {JSON.stringify(value, null, 2)}
-                </pre>
-              ) : (
-                <p className="whitespace-pre-wrap leading-relaxed">{String(value)}</p>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-    );
-  }
-  return null;
-}

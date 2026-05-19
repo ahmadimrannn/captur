@@ -6,11 +6,22 @@ export function CTA() {
     <section className="px-3 sm:px-4 mt-4">
       <div className="bg-[#ef4d23] text-white rounded-2xl sm:rounded-3xl p-10 sm:p-16 text-center relative overflow-hidden">
         <h2
-          style={{ fontSize: "clamp(28px, 5vw, 48px)", lineHeight: 1.1, fontWeight: 500, letterSpacing: "-0.02em" }}
+          style={{
+            fontSize: "clamp(28px, 5vw, 48px)",
+            lineHeight: 1.1,
+            fontWeight: 500,
+            letterSpacing: "-0.02em",
+          }}
           className="max-w-2xl mx-auto"
         >
           Stop rewatching meetings.{" "}
-          <span style={{ fontFamily: "'Instrument Serif', serif", fontStyle: "italic", fontWeight: 400 }}>
+          <span
+            style={{
+              fontFamily: "'Instrument Serif', serif",
+              fontStyle: "italic",
+              fontWeight: 400,
+            }}
+          >
             Start capturing
           </span>{" "}
           insights.
